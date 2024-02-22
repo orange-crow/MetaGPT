@@ -72,7 +72,19 @@ class WritePlan(Action):
             # .replace("__current_plan__", current_plan)
             .replace("__max_tasks__", str(max_tasks))
         )
-        rsp = await self._aask(prompt)
+
+        sys_msgs = [
+            "You love a *simple* plan that contains simple tasks, and you like to make a plan that *one task* \
+            to have only *one action*",
+            "*one action* means that there is only *one verb-object phrase* in *one task*"
+            "To divide *goal* from user into as many parts as possible, and as might be necessary\
+             for its adequate solution.",
+        ]
+        # rsp = await self._aask(prompt, system_messages)
+        rsp = await self.llm.acompletion_text(
+            [{"role": "system", "content": ",".join(sys_msgs)}, {"role": "user", "content": prompt}]
+        )
+        logger.info(rsp)
         rsp = CodeParser.parse_code(block=None, text=rsp)
         if use_tools:
             rsp = await self.assign_task_type(json.loads(rsp))
