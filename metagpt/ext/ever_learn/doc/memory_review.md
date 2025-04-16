@@ -13,6 +13,6 @@
 ## Others
 
 
-1. [ZEP: A TEMPORAL KNOWLEDGE GRAPH ARCHITECTURE FOR AGENT MEMORY](https://arxiv.org/pdf/2501.13956): 没有消融实验, 不过带时间感知的知识图谱是个不错的方向。 2025-01
-
+1. [The Era of Experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf): agent结构的转变，传统的“状态-动作-奖励” -> “经验流 + 自我目标感知 + 长期策略演化”;  2025-04
 2. [Position: Episodic Memory is the Missing Piece for Long-Term LLM Agents](https://arxiv.org/pdf/2502.06975): 无实验论证； 2025-02
+3. [ZEP: A TEMPORAL KNOWLEDGE GRAPH ARCHITECTURE FOR AGENT MEMORY](https://arxiv.org/pdf/2501.13956): 没有消融实验, 不过带时间感知的知识图谱是个不错的方向。 2025-01
